@@ -12,3 +12,10 @@ jobs:
         env:
           INPUT_SCHEMA: /src/schema.json
           INPUT_JSONS: /src/user-agents.json
+
+  verify-useragent-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run:
+          node src/tests/node/test_examples.js
